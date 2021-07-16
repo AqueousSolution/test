@@ -1,0 +1,130 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    
+    .active{
+        color: $color-light-grey;
+        background-color: $color-primary
+    }
+
+    &-top{
+        @include sidebarUnits;
+        height: 7rem;
+        padding: 3rem 2rem;
+        color: $color-white;
+        background: linear-gradient(92.5deg, #376FFF 16.01%, #A25EB9 58.22%, #FF4F79 106.26%);
+    }
+
+    &-middle{
+        @include sidebarUnits;
+        height: 10rem;
+        padding: .7rem 1.5rem;
+        background: $color-white;
+
+        &__tags{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+
+            button{
+                padding: .5rem .8rem;
+                background-color: $color-light-grey;
+                border-radius: .4rem;
+                margin: .4rem;
+                color: $color-primary;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-bottom{
+        @include sidebarUnits;
+        height: 10rem;
+        background: $color-white;
+        padding: 1.3rem;
+        
+        &__header{
+           @include flexBetween;
+           margin-bottom: 1rem;
+        }
+
+        &__item{
+            @include flexBetween;
+            margin-bottom: .6rem;
+            padding-left: 1.2rem;
+            position: relative;
+            
+            .indicator::before{
+                position: absolute;
+                top: .2rem;
+                left: -1%;
+                content: '';
+                height: .6rem;
+                width: .6rem;
+                border-radius: 50%;
+            }
+            .blue::before{
+                background-color: $color-primary;
+            }
+            .purple::before{
+                background-color: $color-secondary;
+            }
+            .teal::before{
+                background-color: $color-teal;
+            }
+         }
+      
+    }
+}
+
+
+@media screen and (max-width:911px) {
+    .sidebar{
+        flex-direction: row;
+        justify-content: space-between;
+
+        &-top{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:553px) {
+    .sidebar{
+        &-middle, &-bottom{
+            padding-right: 1rem;
+            padding-left: 1rem;
+            width: 13rem;
+        }
+    }
+}
+
+@media screen and (max-width:455px) {
+    .sidebar{
+        &-middle{
+            padding-right: .3rem;
+            padding-left: .3rem;
+            width: 11.5rem;
+        }
+        &-bottom{
+            padding-right: .9rem;
+            padding-left: .9rem;
+            width: 11.5rem;  
+        }
+    }
+}
+
+@media screen and (max-width:405px) {
+    .sidebar{
+     flex-direction: column;
+
+        &-middle, &-bottom{
+            padding-right: 2rem;
+            padding-left: 2rem;
+            width: 100%;
+            
+        }
+    }
+}

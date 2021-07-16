@@ -1,0 +1,31 @@
+.main{
+    background-color: $color-grey;
+    padding: 5rem 7rem;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+@media screen and (max-width:1035px) {
+    .main{
+        padding: 5rem 3rem
+    }
+}
+
+@media screen and (max-width:911px) {
+    .main{
+        display: block;
+    }
+}
+
+@media screen and (max-width:617px) {
+    .main{
+        padding: 2rem 1rem
+    }
+}
+
+@media screen and (max-width:400px) {
+    .main{
+        padding: 2rem .2rem
+    }
+}

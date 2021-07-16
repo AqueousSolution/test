@@ -1,0 +1,99 @@
+.home{
+margin-left: 4rem;
+width: 100%;
+}
+
+.content{
+    min-height: 8rem;
+    background-color: $color-white;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+
+    &-votes{
+        height: 3.5rem;
+        width: 2.5rem;
+        background-color: $color-light-grey;
+        border-radius: .4rem;
+        display: grid;
+        justify-content: center;
+        padding-top: .5rem;
+        margin-right: 1rem;
+        position: relative;
+
+        p{
+            
+            margin-top: 1.2rem;
+
+            &::before{
+                content: '<';
+                font-size: 1rem;
+                position: absolute;
+                top: .2rem;
+                left: 40%;
+                transform: rotate(90deg) 
+            }
+        }
+    }
+
+    &-info{
+        display: grid;
+        justify-items: left;
+        padding-left: 1rem;
+
+        &__title{
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        &__description{
+            margin-top: .3rem;
+            font-size: .9rem;
+            color: $color-grey-b;
+        }
+        &__tag{
+            margin-top: .7rem;
+            padding: .5rem .8rem;
+            background-color: $color-light-grey;
+            border-radius: .4rem;
+            color: $color-primary;
+            font-size: .8rem;
+        }
+    }
+
+    &-comment{
+        display: grid;
+        align-items: center;
+        justify-content: flex-end;
+
+        &__number{
+            position: relative;
+            font-weight: bold;
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: .1rem;
+                left: -1.2rem;
+                height: .7rem;
+                width: 1rem;
+                background-color: $color-grey-c;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:911px) {
+    .home{
+       margin-left: 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .content{
+      padding: 1.5rem .5rem;
+    }
+}
