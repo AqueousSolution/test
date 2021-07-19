@@ -39,7 +39,7 @@ const SideBar = () => {
             <div className="sidebar-bottom">
                 <div className="sidebar-bottom__header">
                     <h3>Roadmap</h3>
-                    <a href='#'>View</a>
+                    <p>View</p>
                 </div>
                 <div className="sidebar-bottom__item">
                     <p>Planned</p>
