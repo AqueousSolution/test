@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It also makes use of a blend of the 7-in-1 CSS architecture coupled with the BEM methodology
+
 ## Available Scripts
 
 In the project directory, you can run:
