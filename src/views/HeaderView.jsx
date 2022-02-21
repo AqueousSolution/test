@@ -6,7 +6,7 @@ import ContactForm from "../views/components/ContactForm";
 const Header = () => {
 
     const contactsContext = useContext(ContactsContext);
-    const { contacts  } = contactsContext;
+    const { contacts, getContacts  } = contactsContext;
 
     const ModalContent = React.forwardRef((props, ref) => <div {...props} ref={ref}><ContactForm closeContactModal={closeContactModal}/> </div>)
 
@@ -14,6 +14,7 @@ const Header = () => {
 
     const closeContactModal = () => {
         setAddContactModal(false)
+        getContacts()
     }
 
     const openContactModal = () => {

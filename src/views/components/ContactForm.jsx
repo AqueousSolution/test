@@ -5,6 +5,7 @@ import Media from "../../assets/media.svg";
 import IMAGE_API from "../../store/uploadImageURL";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import { emailValid } from "../../utils/emailValidator";
 
 const ContactForm = ({ closeContactModal }) => {
   const contactsContext = useContext(ContactsContext);
@@ -48,6 +49,8 @@ const ContactForm = ({ closeContactModal }) => {
 
   const [error, setError] = useState("");
 
+  const [emailError, setEmailError] = useState("");
+
   const handleImgChange = (e) => {
     e.preventDefault();
     setImageError(false);
@@ -85,10 +88,15 @@ const ContactForm = ({ closeContactModal }) => {
   const createContact = (e) => {
     e.preventDefault();
     setError(false);
-
+    setEmailError(false)
     if (firstName && lastName && email && phone && birthday) {
-      setButtonLoading(true);
-      addContact(contactDetails);
+        if(emailValid(email)){
+            setButtonLoading(true);
+            addContact(contactDetails);
+        }else{
+            setEmailError(true)
+        }
+  
     } else {
       setError(true);
       console.log(firstName, lastName, email, phone, birthday);
@@ -98,10 +106,14 @@ const ContactForm = ({ closeContactModal }) => {
   const editContact = (e) => {
     e.preventDefault();
     setError(false);
-
+    setEmailError(false)
     if (firstName && lastName && email && phone && birthday) {
-      setButtonLoading(true);
-      updateContact(contactDetails);
+        if(emailValid(email)){
+            setButtonLoading(true);
+            updateContact(contactDetails);
+        }else{
+            setEmailError(true)
+        }
     } else {
       setError(true);
       console.log(firstName, lastName, email, phone, birthday);
@@ -175,6 +187,9 @@ const ContactForm = ({ closeContactModal }) => {
           {error && (
             <p style={{ color: "red" }}>Please fill up all the fields</p>
           )}
+          {emailError && (
+            <p style={{ color: "red" }}>This email is not a valid email</p>
+          )}
           <div className="flex">
             <label htmlFor="firstName">
               First Name
@@ -207,7 +222,7 @@ const ContactForm = ({ closeContactModal }) => {
               <input
                 type="email"
                 id="email"
-                className="modal-input"
+                className={emailError ? "error modal-input" : "modal-input"}
                 name="email"
                 value={email}
                 onChange={handleChange}

@@ -4,6 +4,7 @@
     width: 40rem;
     background-color: $color-dark-grey;
     border-radius: 1rem;
+    overflow-y: scroll;
 
     &-header{
         background-color: $color-black;

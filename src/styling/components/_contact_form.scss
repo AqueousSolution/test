@@ -128,6 +128,10 @@ button{
     margin-right: 2rem;
  }
 
+ .error{
+     border: 3px solid red;
+ }
+
  @media screen and (max-width:690px) {
     .flex{
        flex-direction: column;
