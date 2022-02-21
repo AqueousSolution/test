@@ -3,8 +3,8 @@
     flex-direction: column;
     
     .active{
-        color: $color-light-grey;
-        background-color: $color-primary
+        color: $color-black;
+        background-color: $color-dark-grey
     }
 
     &-top{
@@ -12,14 +12,14 @@
         height: 7rem;
         padding: 3rem 2rem;
         color: $color-white;
-        background: linear-gradient(92.5deg, #376FFF 16.01%, #A25EB9 58.22%, #FF4F79 106.26%);
+        background: $color-dark-grey;
     }
 
     &-middle{
         @include sidebarUnits;
         height: 10rem;
         padding: .7rem 1.5rem;
-        background: $color-white;
+        background: $color-black;
 
         &__tags{
             display: flex;
@@ -29,10 +29,10 @@
 
             button{
                 padding: .5rem .8rem;
-                background-color: $color-light-grey;
+                background-color: $color-grey;
                 border-radius: .4rem;
                 margin: .4rem;
-                color: $color-primary;
+                color: $color-white;
                 border: none;
                 cursor: pointer;
             }
@@ -92,7 +92,7 @@
         justify-content: space-between;
 
         &-top{
-            display: none;
+           height: 10rem;
         }
     }
 }
@@ -114,10 +114,10 @@
             padding-left: .3rem;
             width: 11.5rem;
         }
-        &-bottom{
+        &-top{
             padding-right: .9rem;
             padding-left: .9rem;
-            width: 11.5rem;  
+            width: 9.5rem;  
         }
     }
 }
@@ -126,7 +126,7 @@
     .sidebar{
      flex-direction: column;
 
-        &-middle, &-bottom{
+        &-middle, &-top{
             padding-right: 2rem;
             padding-left: 2rem;
             width: 100%;

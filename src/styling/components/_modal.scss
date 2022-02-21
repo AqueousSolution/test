@@ -1,0 +1,38 @@
+.modal{
+    @include center;
+    height: 45rem;
+    width: 40rem;
+    background-color: $color-dark-grey;
+    border-radius: 1rem;
+
+    &-header{
+        background-color: $color-black;
+        color: $color-dark-grey;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+
+        p{
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width:690px) {
+    .modal{
+        @include center;
+        height: 45rem;
+        width: 90vw;
+        overflow-y: scroll;
+
+        &-header{
+            h1{
+                font-size: 1.4rem;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,144 @@
+
+        .media-bg{
+            height: 10rem;
+            width: 100%;
+            border: 1px dashed $color-black;
+            margin-top: 3rem;
+            position: relative;
+            padding: 1.9rem;
+
+            .uploaded-pic{
+                @include centerVertically;
+                height: 6.5rem;
+                width: 6.5rem;
+                object-fit: cover;
+                left: 1.5rem;
+            }
+
+            .uploaded-pic-details{
+                @include centerVertically;
+                left: 10rem;
+                width: 6rem;
+
+                p{
+                    margin-top: 0;
+                    text-align: left;
+                    color: $color-grey;
+                    font-weight: 600;
+
+                    &:last-of-type{
+                        color: $color-black
+                    }
+                }
+            }
+
+            .uploaded-pic-button{
+                @include centerVertically;
+                width: 9rem;
+                left: 19rem;
+                font-size: .75rem;
+                color: $color-white;
+                background-color: $color-black;
+                border-radius: 4px;
+                padding-top: .6em;
+                border: none;
+            }
+
+            &::before{
+                position: absolute;
+                content: 'Media';
+                top: -1.8rem;
+                left: 0;
+            }
+
+            img{
+                @include centerHorizontally;
+            }
+          
+            p{
+                text-align: center;
+                margin-top: 8rem;
+                font-size: 0.81rem;
+                color: $color-grey;
+                opacity: .5;
+            }
+            label{
+                width: 5.5rem;
+                height: 1.9rem;
+                text-align: center;
+                color: $color-white;
+                background-color: $color-black;
+                border-radius: 4px;
+                padding-top: .6em;
+                border: 1px solid $color-grey;
+                margin-top: 0rem;
+                padding-top: .3rem;
+                cursor: pointer;
+                font-size: .825rem;
+                top: 60%;
+                @include centerHorizontally
+            }
+             input[type=file]{
+                display: none;
+            }
+        }
+
+label{
+    display: grid;
+    grid-row-gap: .5rem;
+    margin-top: 1.5rem;
+}
+
+input{
+    height: 3.1rem;
+    width: 16rem;
+    border: 1px solid rgba($color-black, 0.11);
+    border-radius: .25rem;
+    padding: 1rem;
+}
+
+.fullwidth{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    text-transform:uppercase;
+    margin: 4rem 0rem;
+    cursor: pointer;
+    border: none;
+    height: 2.9rem;
+    width: 100%;
+    border-radius: .25rem;
+    background-color: $color-black;
+    color: $color-white;
+ }
+
+ form{
+    padding: 1rem 1.5rem;
+ }
+
+ .delete{
+    color: $color-black;
+    background-color: $color-white;
+    margin-right: 2rem;
+ }
+
+ @media screen and (max-width:690px) {
+    .flex{
+       flex-direction: column;
+    }
+
+    input{
+        width: 80vw;
+    }
+
+    .delete{
+        margin-bottom: 0rem;
+     }
+    
+}

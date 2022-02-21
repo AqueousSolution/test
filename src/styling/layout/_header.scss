@@ -44,16 +44,6 @@
     }
 }
 
-@media screen and (max-width:511px) {
-    .header{
-        &-left{
-    
-            p:nth-of-type(1){
-                display: none;
-            }
-        }
-    }
-}
 
 @media screen and (max-width:368px) {
     .header{
